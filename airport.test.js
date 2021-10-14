@@ -1,17 +1,22 @@
-describe("Testing to ensure the bag class throws an error", () => {
+const {Bag} = require("./airport.js");
+let suitcase = null
+
+
+describe("Testing the Bag class and its child objects", () => {
+
+    beforeAll(() => {
+        suitcase = new Bag(12);
+    })
+
     test("Passing no value in for weight", () => {
         expect(() => new Bag()).toThrowError("Bag must have a weight");
     });
-});
 
-describe("Ensuring the suitcase object is an instance of the Bag class", () => {
     test("Testing instance of suitcase", () => {
         expect(suitcase).toBeInstanceOf(Bag);
     });
-});
 
-describe("Ensuring the suitcase object is an object", () => {
-    test("Testing instance of suitcase", () => {
-        expect(suitcase).toBe("object");
+    test("Testing type of suitcase", () => {
+        expect(typeof(suitcase)).toBe("object");
     });
 });
