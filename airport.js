@@ -40,7 +40,6 @@ class Crew extends Person {
 };
 
 class Plane {
-
     constructor(type) {
         this.type = type;
         this.passengerList = [];
@@ -51,4 +50,10 @@ class Plane {
     }; 
 };
 
-module.exports = {Bag, Crew, Passenger, Plane};
+class Airport {
+    constructor(name) {
+        this.name = name;
+    };
+};
+
+module.exports = {Bag, Crew, Passenger, Plane, Airport};

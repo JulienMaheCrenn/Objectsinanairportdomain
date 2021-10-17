@@ -1,4 +1,4 @@
-const {Bag, Passenger, Crew, Plane} = require("./airport.js");
+const {Bag, Passenger, Crew, Plane, Airport} = require("./airport.js");
 let suitcase = undefined;
 let piper = undefined;
 let bob = undefined;
@@ -52,15 +52,15 @@ describe("Testing for the Crew class", () => {
         sally.addBag("Pilot Bag");
     });
 
-    test("Testing that bob is an instance of passenger", () => {
+    test("Testing that sally is an instance of crew", () => {
         expect(sally).toBeInstanceOf(Crew);
     });
 
-    test("Testing the type of bob's bag attribute", () => {
+    test("Testing the type of sally's bag attribute", () => {
         expect(typeof(sally.bags)).toBe("object");
     });
 
-    test("Testing that the array length is changed when a new bag is added to the passenger", () => {
+    test("Testing that the array length is changed when a new bag is added to the crew", () => {
         expect(sally.bags.length).toBeGreaterThan(0);
     });
 });
@@ -92,6 +92,6 @@ describe("Testing for the Airport class", () => {
     });
 
     test("testing the type of airport name", () => {
-        expect(heathrow.name).toBe("string");
+        expect(typeof(heathrow.name)).toBe("string");
     });
 });
