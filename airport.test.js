@@ -1,5 +1,7 @@
-const {Bag, Passenger} = require("./airport.js");
-let suitcase = null
+const {Bag, Passenger, Crew} = require("./airport.js");
+let suitcase = undefined
+let piper = undefined
+let bob = undefined
 
 
 describe("Testing the Bag class and its child objects", () => {
@@ -38,5 +40,25 @@ describe("Testing for the Passenger class", () => {
 
     test("Testing that the array length is changed when a new bag is added to the passenger", () => {
         expect(bob.bags.length).toBeGreaterThan(0);
+    });
+});
+
+describe ("Testing for the Planes class", () => {
+
+    beforeAll(() => {
+        piper = new Plane ("Piper");
+        piper.board(bob);
+    });
+
+    test("Testing the type of the plane type attribute", () => {
+        expect(typeof(piper.type)).toBe("String");
+    });
+
+    test("Testing that the passengerList array increases when using the board() function", () => {
+        expect(piper.passengerList.length).toBeGreaterThan(0);
+    });
+
+    test("Testing that piper is an instance of Plane", () => {
+        expect(piper).toBeInstanceOf(Plane);
     });
 });
