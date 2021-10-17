@@ -1,4 +1,4 @@
-const {Bag, Passenger, Crew} = require("./airport.js");
+const {Bag, Passenger, Crew, Plane} = require("./airport.js");
 let suitcase = undefined
 let piper = undefined
 let bob = undefined
@@ -51,7 +51,7 @@ describe ("Testing for the Planes class", () => {
     });
 
     test("Testing the type of the plane type attribute", () => {
-        expect(typeof(piper.type)).toBe("String");
+        expect(typeof(piper.type)).toBe("string");
     });
 
     test("Testing that the passengerList array increases when using the board() function", () => {

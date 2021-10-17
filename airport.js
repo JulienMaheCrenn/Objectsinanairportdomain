@@ -9,7 +9,7 @@ class Bag {
 
 
 class Person {
-    constructor(name, passportNumber, seatNumber) {
+    constructor(name) {
         this.name = name;
         this.bags = [];
     };
@@ -39,4 +39,16 @@ class Crew extends Person {
     };
 };
 
-module.exports = {Bag, Person, Crew, Passenger};
+class Plane {
+
+    constructor(type) {
+        this.type = type;
+        this.passengerList = [];
+    };
+
+    board(passenger) {
+        this.passengerList.push(passenger);
+    }; 
+};
+
+module.exports = {Bag, Crew, Passenger, Plane};
