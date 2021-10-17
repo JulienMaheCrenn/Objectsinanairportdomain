@@ -51,9 +51,27 @@ class Plane {
 };
 
 class Airport {
+    static airports = [];
+
     constructor(name) {
         this.name = name;
+        this.planes = [];
+        this.constructor.airports.push(this);
+    };
+
+    land(plane) {
+        this.planes.push(plane);
     };
 };
+
+piper1 = new Plane("Piper 1");
+concord1 = new Plane("Concord 1");
+heathrow = new Airport ("Heathrow LHR");
+heathrow.land(piper1);
+heathrow.land(concord1);
+
+console.log(Airport.airports);
+
+
 
 module.exports = {Bag, Crew, Passenger, Plane, Airport};
